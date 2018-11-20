@@ -1,0 +1,14 @@
+<%= form_tag "/articles", method: :get %>
+  <%= text_field_tag :query %>
+  <%= submit_tag "Search" %>
+
+<% if @response %>
+  <% @response["data"].each do |element| %>
+    <h1>
+      <%= element["attributes"]["title"] %>
+    </h1>
+    <p>
+      <%= element["attributes"]["description"] %>
+    </p>
+  <% end %>
+<% end %>

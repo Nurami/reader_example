@@ -8,7 +8,7 @@ class ArticlesController < ApplicationController
   private
 
   def fetch_articles_from_api
-    url = "http://127.0.0.1:3000/articles"
+    url = "http://0.0.0.0:3000/articles"
     uri = URI(url)
 
     url_params = { "query" => params[:query]}
